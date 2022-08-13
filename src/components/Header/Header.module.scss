@@ -1,0 +1,14 @@
+.nav__root {
+    background-color: #f14b3d;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .nav__logo {
+        width: 172px;
+        height: 62px;
+    }
+}

@@ -1,0 +1,49 @@
+.pokecart {
+    background: #f8f9fa;
+    box-shadow: 4px 4px 6px -2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    &__name {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    &__order {
+        color: #949494;
+        font-weight: 500;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    &__types__box {
+        display: flex;
+    }
+}
+
+h5 {
+    background: rgba(241, 75, 61, 0.8);
+    border-radius: 5px;
+    padding: 4px 15px;
+    color: #fff;
+    margin: 5px;
+}

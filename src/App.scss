@@ -1,0 +1,48 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-weight: 800;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 38px;
+    padding: 30px;
+}
+
+.pokemons {
+    display: grid;
+    grid-template-columns: repeat(4, 350px);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+    @media (max-width: 1500px) {
+        grid-template-columns: repeat(3, 350px);
+    }
+
+    @media (max-width: 1123px) {
+        grid-template-columns: repeat(2, 350px);
+    }
+
+    @media (max-width: 751px) {
+        grid-template-columns: repeat(1, 350px);
+    }
+}
+
+.pokemons-title {
+    display: flex;
+    justify-content: center;
+}
+
+.not_found {
+    justify-content: center;
+    align-items: center;
+
+    .pokemons {
+        display: none;
+    }
+}
