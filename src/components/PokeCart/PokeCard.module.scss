@@ -32,6 +32,11 @@
         width: 200px;
         height: 200px;
         margin-bottom: 1.5rem;
+
+        @media (max-width: 751px) {
+            width: 150px;
+            margin: 0;
+        }
     }
 
     &__info {
@@ -43,6 +48,9 @@
 
     &__types__box {
         display: flex;
+        @media (max-width: 751px) {
+            margin-bottom: 10px;
+        }
     }
 }
 
