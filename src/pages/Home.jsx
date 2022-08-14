@@ -4,14 +4,12 @@ import { useEffect, useState, useContext } from "react";
 import PokeCart from "../components/PokeCart";
 
 import { SearchContext } from "../App";
-import NotFound from "./NotFound";
 
 const Home = () => {
     const [allPokemons, setAllPokemons] = useState([]);
     const [loadMore, setLoadMore] = useState(
-        "https://pokeapi.co/api/v2/pokemon?limit=100"
+        "https://pokeapi.co/api/v2/pokemon?limit=20"
     );
-
     const { search } = useContext(SearchContext);
 
     const getPokemons = async () => {
@@ -32,6 +30,10 @@ const Home = () => {
 
         PokemonObjects(data.results);
     };
+
+    function handlerLoad() {
+        getPokemons();
+    }
 
     useEffect(() => {
         getPokemons();
@@ -58,6 +60,9 @@ const Home = () => {
                         />
                     ))}
             </div>
+            <button onClick={handlerLoad} className="load-btn">
+                Load more
+            </button>
             {/* {PokemonElements.length === 0 && (
                 <div className="not-found">
                     <NotFound />

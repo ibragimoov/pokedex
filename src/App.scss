@@ -18,7 +18,7 @@ h2 {
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 
     @media (max-width: 1500px) {
         grid-template-columns: repeat(3, 350px);
@@ -182,4 +182,17 @@ h2 {
     line-height: 38px;
     color: #949494;
     padding-top: 10px;
+}
+
+.load-btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #f14b3d;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
