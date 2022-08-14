@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -16,26 +16,29 @@ const Pokemon = () => {
             {pokemonInfo !== undefined && (
                 <div className="pokemon-card">
                     <div className="pokemon-left">
-                        <svg
-                            width="40"
-                            height="40"
-                            viewBox="0 0 40 40"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M20 36.6667C29.2048 36.6667 36.6667 29.2047 36.6667 20C36.6667 10.7952 29.2048 3.33333 20 3.33333C10.7953 3.33333 3.33337 10.7952 3.33337 20C3.33337 29.2047 10.7953 36.6667 20 36.6667Z"
-                                stroke="black"
-                                strokeWidth="2"
-                            />
-                            <path
-                                d="M22.5 13.3333L15.8334 20L22.5 26.6667"
-                                stroke="black"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
+                        <Link to={"/"}>
+                            <svg
+                                width="36"
+                                height="36"
+                                viewBox="0 0 36 36"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18 34.6667C27.2048 34.6667 34.6667 27.2047 34.6667 18C34.6667 8.79525 27.2048 1.33333 18 1.33333C8.79529 1.33333 1.33337 8.79525 1.33337 18C1.33337 27.2047 8.79529 34.6667 18 34.6667Z"
+                                    stroke="black"
+                                    stroke-width="2"
+                                />
+                                <path
+                                    d="M20.5 11.3333L13.8334 18L20.5 24.6667"
+                                    stroke="black"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </Link>
+
                         <div className="pokemon-left-info">
                             <img
                                 src={

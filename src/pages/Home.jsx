@@ -58,11 +58,11 @@ const Home = () => {
                         />
                     ))}
             </div>
-            {PokemonElements.length === 0 && (
+            {/* {PokemonElements.length === 0 && (
                 <div className="not-found">
                     <NotFound />
                 </div>
-            )}
+            )} */}
         </>
     );
 };
