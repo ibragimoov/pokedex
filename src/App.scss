@@ -196,3 +196,22 @@ h2 {
     margin: 0 auto;
     margin-bottom: 2rem;
 }
+
+.back-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+
+    &:active {
+        top: 5px;
+    }
+}

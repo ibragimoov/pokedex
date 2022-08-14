@@ -2,42 +2,46 @@ import React from "react";
 import { useEffect, useState, useContext } from "react";
 
 import PokeCart from "../components/PokeCart";
+import Pagination from "../components/Pagination";
 
 import { SearchContext } from "../App";
 
 const Home = () => {
     const [allPokemons, setAllPokemons] = useState([]);
-    const [loadMore, setLoadMore] = useState(
-        "https://pokeapi.co/api/v2/pokemon?limit=20"
+    const [currentUrl, setCurrentUrl] = useState(
+        "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"
     );
+    const [nextUrl, setNextUrl] = useState("");
+    const [prevUrl, setPrevUrl] = useState("");
     const { search } = useContext(SearchContext);
 
+    const PokemonObjects = (data) => {
+        setAllPokemons([]);
+        data.forEach(async (pokemon) => {
+            const res = await fetch(
+                `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`
+            );
+            const data = await res.json();
+            setAllPokemons((prevPokemons) => [...prevPokemons, data]);
+        });
+    };
+
     const getPokemons = async () => {
-        const res = await fetch(loadMore);
+        const res = await fetch(currentUrl);
         const data = await res.json();
 
-        setLoadMore(data.next);
-
-        const PokemonObjects = (data) => {
-            data.forEach(async (pokemon) => {
-                const res = await fetch(
-                    `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`
-                );
-                const data = await res.json();
-                setAllPokemons((prevPokemons) => [...prevPokemons, data]);
-            });
-        };
+        setNextUrl(data.next);
+        setPrevUrl(data.previous);
 
         PokemonObjects(data.results);
     };
 
-    function handlerLoad() {
-        getPokemons();
-    }
+    const gotoNextPage = () => setCurrentUrl(nextUrl);
+    const gotoPrevPage = () => setCurrentUrl(prevUrl);
 
     useEffect(() => {
         getPokemons();
-    }, []);
+    }, [currentUrl]);
 
     const PokemonElements = allPokemons.filter((pokemon) =>
         pokemon.name.includes(search)
@@ -45,7 +49,10 @@ const Home = () => {
 
     return (
         <>
-            <h2 className="main_title">All pokemons</h2>
+            <Pagination
+                gotoNextPage={nextUrl ? gotoNextPage : null}
+                gotoPrevPage={prevUrl ? gotoPrevPage : null}
+            />
             <div className="pokemon-wrapper">
                 {PokemonElements.length > 0 &&
                     PokemonElements.map((pokemon) => (
@@ -60,14 +67,9 @@ const Home = () => {
                         />
                     ))}
             </div>
-            <button onClick={handlerLoad} className="load-btn">
+            {/* <button onClick={handlerLoad} className="load-btn">
                 Load more
-            </button>
-            {/* {PokemonElements.length === 0 && (
-                <div className="not-found">
-                    <NotFound />
-                </div>
-            )} */}
+            </button> */}
         </>
     );
 };
