@@ -44,8 +44,8 @@ const Home = () => {
 
     return (
         <>
-            <h2 className="pokemons-title">All pokemons</h2>
-            <div className="pokemons">
+            <h2 className="main_title">All pokemons</h2>
+            <div className="pokemon-wrapper">
                 {PokemonElements.length > 0 &&
                     PokemonElements.map((pokemon) => (
                         <PokeCart
@@ -60,7 +60,7 @@ const Home = () => {
                     ))}
             </div>
             {PokemonElements.length === 0 && (
-                <div className="not_found">
+                <div className="not-found">
                     <NotFound />
                 </div>
             )}

@@ -12,7 +12,7 @@ h2 {
     padding: 30px;
 }
 
-.pokemons {
+.pokemon-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 350px);
     grid-column-gap: 25px;
@@ -33,16 +33,119 @@ h2 {
     }
 }
 
-.pokemons-title {
+.main_title {
     display: flex;
     justify-content: center;
 }
 
-.not_found {
+.not-found {
     justify-content: center;
     align-items: center;
 
     .pokemons {
         display: none;
     }
+}
+
+.pokemon-root {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-card {
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 771px;
+}
+
+.pokemon-left {
+    &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    img {
+        width: 226px;
+        height: 218px;
+        margin-bottom: 1rem;
+    }
+}
+
+.pokemon-right {
+    display: flex;
+    flex-direction: column;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    progress {
+        border-radius: 7px;
+        width: 241px;
+        height: 15px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .hp::-webkit-progress-bar {
+        background-color: rgba(96, 212, 148, 0.3);
+        border-radius: 7px;
+    }
+
+    .hp::-webkit-progress-value {
+        background-color: #60d494;
+        border-radius: 7px;
+    }
+
+    .attack::-webkit-progress-bar {
+        background: rgba(241, 75, 61, 0.3);
+        border-radius: 7px;
+    }
+
+    .attack::-webkit-progress-value {
+        background: #f14b3d;
+        border-radius: 7px;
+    }
+
+    .deffense::-webkit-progress-bar {
+        background: rgba(253, 216, 93, 0.3);
+        border-radius: 7px;
+    }
+
+    .deffense::-webkit-progress-value {
+        background: #fdd85d;
+        border-radius: 7px;
+    }
+
+    .speed::-webkit-progress-bar {
+        background: rgba(255, 132, 79, 0.3);
+        border-radius: 7px;
+    }
+
+    .speed::-webkit-progress-value {
+        background: #ff844f;
+        border-radius: 7px;
+    }
+
+    .pokemon-stats {
+        margin-bottom: 5rem;
+        margin-top: 6rem;
+    }
+}
+
+.pokemon-stats {
+    display: flex;
+}
+
+.stats-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    text-align: end;
+    font-weight: bold;
 }
