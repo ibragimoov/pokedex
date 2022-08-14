@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 
 import PokeCart from "../components/PokeCart";
 
@@ -51,7 +50,7 @@ const Home = () => {
                         <PokeCart
                             key={pokemon.order}
                             name={pokemon.name}
-                            id={pokemon.order}
+                            id={pokemon.id}
                             types={pokemon.types}
                             image={
                                 pokemon.sprites.other.dream_world.front_default

@@ -17,7 +17,9 @@ export const Search = () => {
             />
             <input
                 value={search}
-                onChange={(event) => setSearch(event.target.value)}
+                onChange={(event) =>
+                    setSearch(event.target.value.toLowerCase())
+                }
                 className={styles.search__input}
                 placeholder="Search. . ."
             />
