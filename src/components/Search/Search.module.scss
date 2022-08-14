@@ -59,4 +59,20 @@
             right: 5px;
         }
     }
+
+    &__cancel {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 38px;
+        right: 10px;
+        cursor: pointer;
+
+        @media (max-width: 751px) {
+            top: 45px;
+            right: -20px;
+            width: 20px;
+            height: 20px;
+        }
+    }
 }

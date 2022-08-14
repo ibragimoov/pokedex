@@ -9,7 +9,11 @@ const Header = () => {
     return (
         <div className={styles.nav__root}>
             <Link to="/">
-                <img className={styles.nav__logo} src="./logo.png" alt="logo" />
+                <img
+                    className={styles.nav__logo}
+                    src="../logo.png"
+                    alt="logo"
+                />
             </Link>
             <Search />
         </div>

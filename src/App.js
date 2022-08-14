@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Pokemon from "./pages/Pokemon";
 
 export const SearchContext = createContext();
 
@@ -19,6 +20,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="pokemon/:id" element={<Pokemon />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
