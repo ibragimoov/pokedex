@@ -1,31 +1,35 @@
 .root {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     margin: 2rem;
 
-    @media (max-width: 751px) {
-        flex-direction: column;
-    }
-}
-
-.page_btn {
-    position: relative;
-    width: 150px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #f14b3d;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: none;
-
-    &:hover {
-        background-color: #d42515;
+    .pagination_box {
+        width: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    &:active {
-        background-color: #aa2a1e;
-        top: 5px;
+    .page_btn {
+        margin: 10px;
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #f14b3d;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        border: none;
+
+        &:hover {
+            background-color: #d42515;
+        }
+
+        &:active {
+            background-color: #aa2a1e;
+            top: 5px;
+        }
     }
 }

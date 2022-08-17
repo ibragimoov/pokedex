@@ -5,23 +5,25 @@ import styles from "./Pagination.module.scss";
 const Pagination = ({ gotoNextPage, gotoPrevPage }) => {
     return (
         <div className={styles.root}>
-            {gotoPrevPage && (
-                <button
-                    className={styles.page_btn}
-                    onClick={() => gotoPrevPage()}
-                >
-                    Previous
-                </button>
-            )}
             <h2 className="main_title">All pokemons</h2>
-            {gotoNextPage && (
-                <button
-                    className={styles.page_btn}
-                    onClick={() => gotoNextPage()}
-                >
-                    Next
-                </button>
-            )}
+            <div className={styles.pagination_box}>
+                {gotoPrevPage && (
+                    <button
+                        className={`${styles.page_btn} ${styles.prev_btn}`}
+                        onClick={() => gotoPrevPage()}
+                    >
+                        Previous
+                    </button>
+                )}
+                {gotoNextPage && (
+                    <button
+                        className={`${styles.page_btn} ${styles.next_btn}`}
+                        onClick={() => gotoNextPage()}
+                    >
+                        Next
+                    </button>
+                )}
+            </div>
         </div>
     );
 };
