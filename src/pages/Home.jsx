@@ -59,20 +59,23 @@ const Home = () => {
                 gotoPrevPage={prevUrl ? gotoPrevPage : null}
             />
             <div className="pokemon-wrapper">
-                {pokemons.length > 0
-                    ? PokemonElements.map((pokemon) => (
-                          <PokeCart
-                              key={pokemon.order}
-                              name={pokemon.name}
-                              id={pokemon.id}
-                              types={pokemon.types}
-                              image={
-                                  pokemon.sprites.other.dream_world
-                                      .front_default
-                              }
-                          />
-                      ))
-                    : SkeletonElements}
+                {
+                    // pokemons.length > 0
+                    //     ? PokemonElements.map((pokemon) => (
+                    //           <PokeCart
+                    //               key={pokemon.order}
+                    //               name={pokemon.name}
+                    //               id={pokemon.id}
+                    //               types={pokemon.types}
+                    //               image={
+                    //                   pokemon.sprites.other.dream_world
+                    //                       .front_default
+                    //               }
+                    //           />
+                    //       ))
+                    //     :
+                    SkeletonElements
+                }
             </div>
             {/* <button onClick={handlerLoad} className="load-btn">
                 Load more
