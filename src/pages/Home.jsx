@@ -14,7 +14,6 @@ const Home = () => {
     );
     const [nextUrl, setNextUrl] = useState("");
     const [prevUrl, setPrevUrl] = useState("");
-    const [isLoading, setLoading] = useState(false);
     const { search } = useContext(SearchContext);
 
     const PokemonObjects = (data) => {
@@ -26,11 +25,9 @@ const Home = () => {
             const data = await res.json();
             setPokemons((prevPokemons) => [...prevPokemons, data]);
         });
-        setLoading(false);
     };
 
     const getPokemons = async () => {
-        setLoading(true);
         const res = await fetch(currentUrl);
         const data = await res.json();
 
@@ -62,23 +59,20 @@ const Home = () => {
                 gotoPrevPage={prevUrl ? gotoPrevPage : null}
             />
             <div className="pokemon-wrapper">
-                {
-                    // PokemonElements.length > 0
-                    !isLoading
-                        ? PokemonElements.map((pokemon) => (
-                              <PokeCart
-                                  key={pokemon.order}
-                                  name={pokemon.name}
-                                  id={pokemon.id}
-                                  types={pokemon.types}
-                                  image={
-                                      pokemon.sprites.other.dream_world
-                                          .front_default
-                                  }
-                              />
-                          ))
-                        : SkeletonElements
-                }
+                {pokemons.length > 0
+                    ? PokemonElements.map((pokemon) => (
+                          <PokeCart
+                              key={pokemon.order}
+                              name={pokemon.name}
+                              id={pokemon.id}
+                              types={pokemon.types}
+                              image={
+                                  pokemon.sprites.other.dream_world
+                                      .front_default
+                              }
+                          />
+                      ))
+                    : SkeletonElements}
             </div>
             {/* <button onClick={handlerLoad} className="load-btn">
                 Load more
