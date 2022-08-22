@@ -14,6 +14,7 @@ h2 {
 
 .pokemon-wrapper {
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(4, 350px);
     grid-column-gap: 25px;
     grid-row-gap: 25px;

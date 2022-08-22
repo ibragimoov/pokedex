@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react";
 
 import PokeCart from "../components/PokeCart";
 import Pagination from "../components/Pagination";
-import Skeleton from "../components/Skeleton";
+import Skeleton from "../components/PokeCart/Skeleton";
 
 import { SearchContext } from "../App";
 
